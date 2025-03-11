@@ -6,10 +6,10 @@ The objective is two-fold:
 ## Software
 
  * Terminal: one of 
-  * uxterm
-  * xterm
-  * alacritty
-  * kitty
+   * uxterm
+   * xterm
+   * alacritty
+   * kitty
  * tmux
  * ssh
  * Editor: one of
@@ -24,9 +24,9 @@ That means
 
 should work. This mean if you do
 
-   $ tmux
-   $ ssh blahblah
-   $ $editor
+    $ tmux
+    $ ssh blahblah
+    $ $editor
 
 Then copy and paste shouldn't magically change. It shouldn't magically change for tmux. It shouldn't magically change for ssh, it shouldn't magically change, ever, at all, ever. Never. 
 It should be utterly predictable every time.
