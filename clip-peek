@@ -1,0 +1,6 @@
+#!/bin/bash
+pri=$(xsel -o -p | tr '\n' ':' | sed -E 's/^\s+//')
+echo "$pri" | head -1 | dzen2 -ta l -w 400 -p 2 -y -1 -fn "Monospace-10" -bg "#000040" -fg "#ffffff"&
+
+buf=$(xsel -o -b | tr '\n' ':' | sed -E 's/^\s+//')
+echo "$buf" | head -1 | dzen2 -ta l -w 400 -p 2 -x 400 -y -1 -fn "Monospace-10" -bg "#400000" -fg "#ffffff"&

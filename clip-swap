@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# secondary is not used. Usually it's clipboard
+xsel -o -p | xsel -i -s
+xsel -o -b | xsel -i -p
+xsel -o -s | xsel -i -b
+./clip-peek
