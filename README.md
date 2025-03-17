@@ -24,12 +24,23 @@ That means
 
 should work. This mean if you do
 
+```bash
     $ tmux
     $ ssh blahblah
     $ $editor
+```
 
 Then copy and paste shouldn't magically change. It shouldn't magically change for tmux. It shouldn't magically change for ssh, it shouldn't magically change, ever, at all, ever. Never. 
 It should be utterly predictable every time.
+
+## Notes:
+### tmux
+as far as I can tell, https://github.com/tmux/tmux/wiki/Clipboard is totally fucking wrong.
+
+```bash
+set-clipboard on
+```
+is the only option that works for OSC-52. Tried compiling from HEAD, running with no other options, `external` is a myth. You need on. This _likely_ goes to `XA_CLIPBOARD`
 
 ## The problems
 
@@ -52,9 +63,9 @@ In 1984 someone decided that insert on select was a good idea. They were wrong. 
 
 ## Todo add
 
- * .vimrc
- * .Xresources
- * alacritty.toml
- * kitty.conf
- * .tmux.conf
- * .ssh/config
+* .vimrc
+* .Xresources
+* alacritty.toml
+* kitty.conf
+* .tmux.conf
+* .ssh/config
