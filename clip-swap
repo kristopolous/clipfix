@@ -1,7 +1,21 @@
 #!/bin/bash
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
+# So we have three
+# -p -s tmux
+# here's how we do it.
+
+# we first flip 1 and 3 (primary and tmux)
 # secondary is not used. Usually it's clipboard
-xsel -o -p | xsel -i -s
-xsel -o -b | xsel -i -p
-xsel -o -s | xsel -i -b
-./clip-peek
+if pgrep tmux > /dev/null; then
+    xsel -op | xsel -is
+    tmux show-buffer | xsel -ip
+    tmux set-buffer "$(xsel -os)"
+fi
+
+# now we flip 1 and 2 (primary and secondary)
+xsel -op | xsel -is
+xsel -ob | xsel -ip
+xsel -os | xsel -ib
+
+$DIR/clip-peek
