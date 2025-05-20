@@ -42,6 +42,14 @@ set-clipboard on
 ```
 is the only option that works for OSC-52. Tried compiling from HEAD, running with no other options, `external` is a myth. You need on. This _likely_ goes to `XA_CLIPBOARD`
 
+### tmux-make-the-mouse-work.sh
+when you do what it says all it does is clear the screen and says some command returned 1, well thanks. Why isn't something as basic as the clipboard a day 1 feature. That's where `tmux-make-the-mouse-work.sh` which does what it says. Now if you do something  like
+
+```bash
+bind-key -n MouseDown2Pane run '$HOME/bin/tmux-make-the-mouse-work.sh'
+```
+That actually finally, actually works. Like actually. You can middle click without popping an error message. I swear.
+
 ## The problems
 
 In 1984 someone decided that insert on select was a good idea. They were wrong. This is a terrible idea. It gets clobbered trivially. So although there's `CUT_BUFFER[0-9]`, `XA_PRIMARY`, `XA_SECONDARY` and `XA_CLIPBOARD` effectively just `XA_PRIMARY` and `XA_CLIPBOARD` are used.

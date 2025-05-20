@@ -1,4 +1,5 @@
 #!/bin/bash
+
 pri=$(xsel -o -p | tr '\n' ':' | sed -E 's/^\s+//')
 echo "$pri" | head -1 | dzen2 -ta l -w 400 -p 2 -y -1 -fn "Monospace-10" -bg "#000020" -fg "#ffffff"&
 
